@@ -8,6 +8,7 @@ namespace Line_Problem
         static float CalulateLength(int x1, int x2, int y1, int y2)
         {
             float length = (float)Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+
             return length;
         }
 
@@ -21,7 +22,8 @@ namespace Line_Problem
             float[] length = new float[2];
 
 
-            //Taking coordinate inputs from the user for 2 lines
+            // Taking coordinate inputs from the user for 2 lines
+
             for (int i = 0; i <= 1; i++)
             {
                 int x1 = 0, x2 = 0, y1 = 0, y2 = 0;
@@ -41,18 +43,24 @@ namespace Line_Problem
                 y2 = Convert.ToInt32(Console.ReadLine());
 
                 length[i] = CalulateLength(x1, x2, y1, y2);
+                Console.WriteLine("Length of line " + (i + 1) + "= " + length[i]);
 
             }
 
+            int k = length[0].CompareTo(length[1]);
 
 
-            if (length[0].Equals(length[1]))
+            if (k == 0)
             {
-                Console.WriteLine("Lines have equal length.");
+                Console.WriteLine("Equal lines.");
+            }
+            else if (k > 0)
+            {
+                Console.WriteLine("Line 1 is longer than Line 2");
             }
             else
             {
-                Console.WriteLine("Lines are not equal in length!");
+                Console.WriteLine("Line 2 is longer than Line 1");
             }
 
 
