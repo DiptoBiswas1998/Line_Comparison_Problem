@@ -15,7 +15,7 @@ namespace Line_Problem
             Console.WriteLine("Welcome to Line Comparison Problem!");
             //variables
             float[] length = new float[2];
-            //Taking coordinate inputs from the user for 2 lines
+            // Taking coordinate inputs from the user for 2 lines
             for (int i = 0; i <= 1; i++)
             {
                 int x1 = 0, x2 = 0, y1 = 0, y2 = 0;
@@ -27,6 +27,12 @@ namespace Line_Problem
                 y1 = Convert.ToInt32(Console.ReadLine());
                 y2 = Convert.ToInt32(Console.ReadLine());
                 length[i] = CalulateLength(x1, x2, y1, y2);
+                Console.WriteLine("Length of line " + (i + 1) + "= " + length[i]);
+            }
+            int k = length[0].CompareTo(length[1]);
+            if (k == 0)
+            {
+                Console.WriteLine("Equal lines.");
             }
             if (length[0].Equals(length[1]))
             {
